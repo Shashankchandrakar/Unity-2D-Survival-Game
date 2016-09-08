@@ -66,7 +66,7 @@ public class GameMaster : MonoBehaviour {
 
 	public Transform playerPrefab;
 	public Transform spawnPoint;
-	public float spawnDelay = 2;
+	public float spawnDelay = 2f;
 	public CameraShaking camShake;
 	public Transform spawnPrefab;
 
@@ -112,9 +112,22 @@ public class GameMaster : MonoBehaviour {
 		audioManager.PlaySound (spawnSoundName);
 		Transform spawnParticlesClone= Instantiate (spawnPrefab, spawnPoint.position, spawnPoint.rotation) as Transform;
 		Destroy (spawnParticlesClone.gameObject,2f);
+
+		GameObject play = GameObject.FindGameObjectWithTag ("Player");
+		play.GetComponent<Player> ().enabled = false;
+
+		Animator anim = play.GetComponent<Animator> ();
+		anim.SetBool ("Invincible", true);
+		yield return new WaitForSeconds (4f);
+		play.GetComponent<Player> ().enabled = true;
+		anim.SetBool ("Invincible", false);
+
 	}
 
-	public static void KillPlayer (Player player) {
+
+
+	public static void KillPlayer (Player player) 
+	{
 		Destroy (player.gameObject);
 		_remaninlives -= 1;
 		if(_remaninlives <= 0)

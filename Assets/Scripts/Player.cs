@@ -48,20 +48,29 @@ public class Player : MonoBehaviour {
 	}
 
 	public void DamagePlayer (int damage) {
-		stats.curHealth -= damage;
-		if (stats.curHealth <= 0) 
-		{	
-			//play death sound
-			audioManager.PlaySound(deathSoundName);
-			//kill player
-			GameMaster.KillPlayer (this);
+		try
+		{stats.curHealth -= damage;}
+		catch(System.Exception e) {
+			print ("I KNOW ABOUT THIS ERROR  IT HAPPENS COZ PLAYER IS INVINCIBLE !!!");
 		}
-		else
+		try{
+			if (stats.curHealth <= 0) 
+			{	
+				//play death sound
+				audioManager.PlaySound(deathSoundName);
+				//kill player
+				GameMaster.KillPlayer (this);
+			}
+			else
+			{
+				//play damage sound
+				audioManager.PlaySound(damageSoundName);
+			}
+		}
+		catch(System.Exception e)
 		{
-			//play damage sound
-			audioManager.PlaySound(damageSoundName);
+			print ("YAY I KNOW ABOUT THIS ERROR  IT HAPPENS COZ PLAYER IS INVINCIBLE !!!");
 		}
-
 		statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);
 	}
 
