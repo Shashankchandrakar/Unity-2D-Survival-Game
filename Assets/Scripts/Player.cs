@@ -51,6 +51,7 @@ public class Player : MonoBehaviour {
 		try
 		{stats.curHealth -= damage;}
 		catch(System.Exception e) {
+			print (e);
 			print ("I KNOW ABOUT THIS ERROR  IT HAPPENS COZ PLAYER IS INVINCIBLE !!!");
 		}
 		try{
@@ -68,7 +69,7 @@ public class Player : MonoBehaviour {
 			}
 		}
 		catch(System.Exception e)
-		{
+		{	print (e);
 			print ("YAY I KNOW ABOUT THIS ERROR  IT HAPPENS COZ PLAYER IS INVINCIBLE !!!");
 		}
 		statusIndicator.SetHealth(stats.curHealth, stats.maxHealth);

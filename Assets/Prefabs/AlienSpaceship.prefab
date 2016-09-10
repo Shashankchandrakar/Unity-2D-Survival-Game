@@ -265,15 +265,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-    maxHealth: 825
-    gameStartingHealth: 150
+    maxHealth: 480
+    gameStartingHealth: 100
     gameStartdamage: 30
-    damage: 1125
+    damage: 270
   deathParticles: {fileID: 443996, guid: 58fc4f99c6b91374e87f93e47fbaef57, type: 2}
   shakeAmt: 0.1
   shakeLength: 0.1
   deathSoundName: Explosion
-  moneyDrop: 25
+  moneyDrop: 30
   gameStartMoney: 10
   statusIndicator: {fileID: 11457452}
 --- !u!114 &11480296

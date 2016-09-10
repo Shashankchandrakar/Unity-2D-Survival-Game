@@ -2623,8 +2623,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a77a062679e2f4785f6fecc5b04e37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  increaseInEnemy: 2
-  increaseInEnemySpeed: 0.71
+  increaseInEnemy: 3
+  increaseInEnemySpeed: 0.8
   wave:
   - name: Alien Invasion
     Enemy: {fileID: 478700, guid: 45566c203770d0342a06c352d6c04613, type: 2}
@@ -2632,11 +2632,11 @@ MonoBehaviour:
     rate: 1.5
   - name: Alien Invasion 2.0
     Enemy: {fileID: 482188, guid: 1c66425f3cdc8804d8158c57dbf5b9bc, type: 2}
-    count: 10
+    count: 8
     rate: 1.2
   - name: Run While You Cane
     Enemy: {fileID: 418680, guid: 9765d095013ddb1418acff40b4ac6761, type: 2}
-    count: 13
+    count: 10
     rate: 1
   SpawnPoints:
   - {fileID: 0}
@@ -2645,11 +2645,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   timeBetweenWaves: 3
-  moneyDropIncreas: 5
-  enemyHealthIncrease: 75
-  enemyHealth_increaselvl: 50
+  moneyDropIncreas: 20
+  enemyHealthIncrease: 50
   damageIncrease: 15
-  damage_multiplier: 2
 --- !u!114 &11494830
 MonoBehaviour:
   m_ObjectHideFlags: 1

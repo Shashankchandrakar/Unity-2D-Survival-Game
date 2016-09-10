@@ -37,10 +37,9 @@ public class WaveSpawnner : MonoBehaviour {
 
 	public int moneyDropIncreas = 5;
 	public int enemyHealthIncrease = 50;
-	public int enemyHealth_increaselvl = 50;
+
 	public int damageIncrease = 15;
-	[SerializeField]
-	int damage_multiplier = 2; 
+
 	private float WaveCountDown;
     public float waveCoutDown
     {
@@ -150,12 +149,12 @@ public class WaveSpawnner : MonoBehaviour {
 		state = SpawnState.WAITING;
 
 		_wave.count +=increaseInEnemy ;
-		increaseInEnemy += 3;
+
 		_wave.rate += increaseInEnemySpeed;
 		_wave.Enemy.GetComponent <Enemy>().stats.maxHealth += enemyHealthIncrease;
-		enemyHealthIncrease += enemyHealth_increaselvl;
+
 		_wave.Enemy.GetComponent <Enemy>().stats.damage += damageIncrease;
-		damageIncrease *= damage_multiplier;
+
 		_wave.Enemy.GetComponent<Enemy> ().moneyDrop += moneyDropIncreas;
 
 		yield break;
