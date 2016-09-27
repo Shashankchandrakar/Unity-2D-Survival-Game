@@ -46,11 +46,13 @@ public class UpgradeMenu : MonoBehaviour {
 	void OnEnable()
 	{	stats = PlayerStats.instance;
 		UpdateValues ();
-		Time.timeScale = 0.0f;
+
+		//Time.timeScale = 0.0f;
 	}
 	void OnDisable()
 	{
-		Time.timeScale = 1.0f;
+
+		//Time.timeScale = 1.0f;
 	}
 	void UpdateValues()
 	{
@@ -64,12 +66,13 @@ public class UpgradeMenu : MonoBehaviour {
 
 
 	public void UpgradeHealth()
-	{	stats.healthRegenRate += stats.increaseInRateAfterUpgrade;
+	{	
 		if (GameMaster.Money < healthUpgradeCost) 
 		{	//TODO:add no money thing 
 			AudioManager.instance.PlaySound ("NoMoney");
 			return;
 		}
+		stats.healthRegenRate += stats.increaseInRateAfterUpgrade;
 		stats.maxHealth += healthIncrease;
 		AudioManager.instance.PlaySound ("Money");
 		GameMaster.Money -= healthUpgradeCost;

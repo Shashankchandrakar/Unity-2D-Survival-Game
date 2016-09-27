@@ -51,6 +51,8 @@ public class GameMaster : MonoBehaviour {
 		upgradeMenu.SetActive (! upgradeMenu.activeSelf);
 		wave.enabled = !upgradeMenu.activeSelf;
 		onToggleUpgradeMenu(upgradeMenu.activeSelf);
+		GameObject.FindGameObjectWithTag ("Player").GetComponent<Player> ().enabled = !upgradeMenu.activeSelf;
+
 	}
 
 
@@ -80,6 +82,9 @@ public class GameMaster : MonoBehaviour {
 
 	[SerializeField]
 	private WaveSpawnner wave;
+
+
+
 
 	void Start()
 	{	

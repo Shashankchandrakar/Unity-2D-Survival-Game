@@ -1150,7 +1150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
-  increaseInRateAfterUpgrade: 0.25
+  increaseInRateAfterUpgrade: 0.1
   movementSpeed: 10
   healthRegenRate: 2
   Damage: 50

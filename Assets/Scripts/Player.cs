@@ -43,6 +43,9 @@ public class Player : MonoBehaviour {
 
 	void Update () {
 		//InvokeRepeating ("RegenHealth", 1f/stats.healthRegenRate,1f/ stats.healthRegenRate);
+		if (GameObject.FindGameObjectWithTag ("Menu") != null) {
+			
+		}
 		if (transform.position.y <= fallBoundary)
 			DamagePlayer (9999999);
 	}

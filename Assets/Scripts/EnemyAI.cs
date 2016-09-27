@@ -114,8 +114,11 @@ public class EnemyAI : MonoBehaviour {
 
 
 	void FixedUpdate()
-	{
-
+	{	//print (GameObject.FindGameObjectWithTag ("Menu"));
+		if (GameObject.FindGameObjectWithTag ("Menu") != null ) 
+		{	target = null;
+			return;	
+		}
 		if (target == null) 
 		{
 			if (!searchForPlayer) {
