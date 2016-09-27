@@ -21,13 +21,13 @@ public class UpgradeMenu : MonoBehaviour {
 	private int speedIncrease = 1;
 
 	[SerializeField]
-	private int healthUpgradeCost = 50;
+	public int healthUpgradeCost = 50;
 
 	[SerializeField]
-	private int speedUpgradeCost = 50;
+	public int speedUpgradeCost = 50;
 
 	[SerializeField]
-	private int damageUpgradeCost = 50;
+	public int damageUpgradeCost = 50;
 
 	[SerializeField]
 	private int damageIncrease = 5;
@@ -41,11 +41,17 @@ public class UpgradeMenu : MonoBehaviour {
 	[SerializeField]
 	private Text damageUpgradeButton;
 
+	[SerializeField]
+	private int Increase_COST_UPGRADE = 10;
 	void OnEnable()
 	{	stats = PlayerStats.instance;
 		UpdateValues ();
+		Time.timeScale = 0.0f;
 	}
-
+	void OnDisable()
+	{
+		Time.timeScale = 1.0f;
+	}
 	void UpdateValues()
 	{
 		healthText.text ="HEALTH: "+ stats.maxHealth.ToString ();
@@ -67,7 +73,7 @@ public class UpgradeMenu : MonoBehaviour {
 		stats.maxHealth += healthIncrease;
 		AudioManager.instance.PlaySound ("Money");
 		GameMaster.Money -= healthUpgradeCost;
-		healthUpgradeCost += 10;
+		healthUpgradeCost +=Increase_COST_UPGRADE ;
 		UpdateValues ();
 	}
 

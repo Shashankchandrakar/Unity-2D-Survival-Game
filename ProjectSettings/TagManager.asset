@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - Obscatles
   - GM
+  - Menu
   layers:
   - Default
   - TransparentFX

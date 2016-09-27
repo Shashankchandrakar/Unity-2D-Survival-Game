@@ -680,18 +680,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 11455080, guid: 32b1e1092ad3904439630a49776d232f, type: 2}
-      propertyPath: backGround.Array.data[0]
-      value: 
-      objectReference: {fileID: 1419494780}
-    - target: {fileID: 11455080, guid: 32b1e1092ad3904439630a49776d232f, type: 2}
-      propertyPath: backGround.Array.data[1]
-      value: 
-      objectReference: {fileID: 1900311797}
-    - target: {fileID: 11455080, guid: 32b1e1092ad3904439630a49776d232f, type: 2}
-      propertyPath: backGround.Array.data[2]
-      value: 
-      objectReference: {fileID: 1844772673}
     - target: {fileID: 11494758, guid: 32b1e1092ad3904439630a49776d232f, type: 2}
       propertyPath: SpawnPoints.Array.data[0]
       value: 
@@ -712,6 +700,18 @@ Prefab:
       propertyPath: SpawnPoints.Array.data[4]
       value: 
       objectReference: {fileID: 2026882448}
+    - target: {fileID: 11455080, guid: 32b1e1092ad3904439630a49776d232f, type: 2}
+      propertyPath: backGround.Array.data[0]
+      value: 
+      objectReference: {fileID: 1419494780}
+    - target: {fileID: 11455080, guid: 32b1e1092ad3904439630a49776d232f, type: 2}
+      propertyPath: backGround.Array.data[1]
+      value: 
+      objectReference: {fileID: 1900311797}
+    - target: {fileID: 11455080, guid: 32b1e1092ad3904439630a49776d232f, type: 2}
+      propertyPath: backGround.Array.data[2]
+      value: 
+      objectReference: {fileID: 1844772673}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32b1e1092ad3904439630a49776d232f, type: 2}
   m_IsPrefabParent: 0

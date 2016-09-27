@@ -74,6 +74,15 @@ public class WaveSpawnner : MonoBehaviour {
 		{
 			nextWave = 0;
 			Debug.Log("ALL WAVE COMPLETED !!!! LOOPING TO START NOW !!!");
+			enemyHealthIncrease += 100;
+			//increaseInEnemy += 1;
+			increaseInEnemySpeed += 0.7f;
+			//GameObject obj = GameObject.FindGameObjectWithTag ("Menu");
+			//UpgradeMenu up = obj.GetComponent <UpgradeMenu> ();
+			//up.healthUpgradeCost += 100;
+			//up.speedUpgradeCost += 100;
+			//up.damageUpgradeCost += 100;
+
 		}
 		else
 		{
@@ -142,8 +151,12 @@ public class WaveSpawnner : MonoBehaviour {
 		state = SpawnState.SPAWING;
 		for (int i = 0; i < _wave.count; i++)
 		{
-			SpawnEnemy (_wave.Enemy);
-			yield return new WaitForSeconds (1f / _wave.rate);
+			//GameObject obj = GameObject.FindGameObjectWithTag ("Menu");
+			//if (obj == null) 
+			{
+				SpawnEnemy (_wave.Enemy);
+				yield return new WaitForSeconds (1f / _wave.rate);
+			} 
 		}
 
 		state = SpawnState.WAITING;
@@ -160,14 +173,20 @@ public class WaveSpawnner : MonoBehaviour {
 		yield break;
 	}
 
-    
+
 
    
 
 	void SpawnEnemy(Transform _enemy)
 	{   
         Transform _sp = SpawnPoints[Random.Range(0, SpawnPoints.Length)];
-        Instantiate(_enemy, _sp.position, _sp.rotation);
+		//GameObject obj = GameObject.FindGameObjectWithTag ("Menu");
+		//if (obj != null)
+		{
+			Instantiate (_enemy, _sp.position, _sp.rotation);
+		} //else {
+			//return;
+		//}
 		Debug.Log("Spawning Enemy : "+ _enemy.name);
 	}
 		
